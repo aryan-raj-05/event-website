@@ -133,7 +133,7 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible), input:focus:not(:
 }
 
 .banner-slide {
-    background-image: url('../smvit.jpg');
+    background-image: url('../images/smvit.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
