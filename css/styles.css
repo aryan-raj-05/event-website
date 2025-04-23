@@ -1,0 +1,144 @@
+/* /css/style.css */
+
+/* Apply a modern font stack */
+body {
+    display: flex;
+    flex-direction: column; /* Needed for sticky footer */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa; /* Light gray background for the page */
+}
+
+/* Ensure main content area grows to push footer down */
+main {
+    flex-grow: 1;
+}
+
+/* Header Enhancements */
+.navbar-brand {
+    font-weight: 600; /* Slightly bolder brand name */
+}
+.navbar {
+    /* Add a subtle bottom border to the navbar */
+   /* border-bottom: 1px solid #e9ecef; / / Handled by shadow-sm */
+}
+
+/* Banner Carousel Enhancements */
+#bannerCarousel .carousel-item img {
+    /* Consider adding a slight overlay for text contrast */
+    /* filter: brightness(0.85); */
+}
+#bannerCarousel .carousel-caption {
+    /* Ensure caption background provides good contrast */
+    background-color: rgba(0, 0, 0, 0.6); /* Darker semi-transparent background */
+    border-radius: 0.5rem; /* Rounded corners for the caption box */
+}
+
+/* Card Styling Enhancements */
+.card {
+    border: none; /* Remove default Bootstrap card border */
+    border-radius: 0.5rem; /* Consistent rounded corners */
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden; /* Ensure image corners are clipped by border-radius */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.card-img-top {
+    /* Ensure images in cards don't distort */
+    aspect-ratio: 16 / 9; /* Common aspect ratio for event images */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+}
+
+/* Specific styling for club logos if needed */
+.club-logo {
+    max-height: 100px; /* Limit logo height */
+    width: auto;      /* Maintain aspect ratio */
+    object-fit: contain; /* Fit logo within bounds without cropping */
+    margin-bottom: 1rem;
+}
+
+/* Event Details Page Image */
+.event-detail-image {
+    max-height: 450px; /* Limit banner image height */
+    width: 100%;
+    object-fit: cover; /* Cover the area */
+    border-radius: 0.5rem; /* Rounded corners */
+}
+
+/* Footer Styling */
+footer {
+    font-size: 0.9em;
+}
+footer a {
+    text-decoration: none; /* Remove underline from footer links */
+    transition: color 0.2s ease;
+}
+footer a:hover {
+    color: #ffffff !important; /* Brighter white on hover */
+    text-decoration: underline;
+}
+
+/* Utility class (if needed, though Bootstrap covers most cases) */
+.hidden {
+    display: none !important;
+}
+
+/* Add some padding below the sticky header to prevent content overlap */
+body {
+    padding-top: 56px; /* Adjust based on your navbar height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    body {
+        padding-top: 56px; /* Ensure padding matches collapsed navbar height */
+    }
+    .card-img-top {
+       aspect-ratio: 4 / 3; /* Adjust aspect ratio for smaller cards if needed */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.6rem; }
+    .event-detail-image { max-height: 300px; }
+}
+
+/* Add focus styles for accessibility */
+a:focus, button:focus, input:focus, select:focus {
+    outline: 2px solid #0d6efd; /* Bootstrap primary blue outline */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); /* Bootstrap focus shadow */
+}
+/* Remove default outline when custom focus is applied */
+a:focus:not(:focus-visible), button:focus:not(:focus-visible), input:focus:not(:focus-visible), select:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Style for the simulated registration button */
+#register-btn:disabled {
+    cursor: not-allowed;
+    background-color: #6c757d; /* Bootstrap secondary color */
+    border-color: #6c757d;
+}
+
+/* Alert message styling */
+#no-results, #event-not-found {
+    font-weight: 500;
+}
+
+.banner-slide {
+    background-image: url('../smvit.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
